@@ -31,7 +31,7 @@ if (isset($_SESSION['id_users'])) {
             if ($_SESSION['co_re_user'] == null) {
               echo '<a name="" id="btnCreate" class="btn btn-danger" href="formulaire.php" role="button"> Créez votre CV</a>';
             } else {
-              echo '<a name="" id="btnCreate" class="btn btn-danger" href="#" role="button"> Supprimez votre CV</a>';
+              echo '<a name="" id="btnCreate" class="btn btn-danger" href="delete_CV.php" role="button"> Supprimez votre CV</a>';
             }
 
             if ($_SESSION['co_re_user'] == null) {

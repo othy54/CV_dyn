@@ -47,3 +47,11 @@ textarea {
     padding-bottom: 10px;
     text-align: center;
 }
+
+#nav-border{
+    -webkit-box-shadow: 0px 6px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 6px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 6px 26px 0px rgba(0,0,0,0.75);
+    background-color: white;
+    height: 40px;
+}

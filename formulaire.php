@@ -30,8 +30,17 @@ if (isset($id)) {
 
 <body>
 
+
+
   <div class="mainContainer">
-    <div class="container">
+    <div class="container-fluid" id="nav-border">
+
+      <div id="row">
+        s
+      </div>
+
+    </div>
+    <div class="container" style="margin-top: 30px;">
       <div class="row" id="square">
         <div class="col-10" id="theTabs">
           <h1 class="titre">MyResume</h1>
@@ -71,7 +80,7 @@ if (isset($id)) {
 
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="identity" role="tabpanel" aria-labelledby="identite-tab">
-              <form action="#" method="post" id="formidentity">
+              <form action="#" method="post" id="form-user">
                 <div class="row rowLabel">
                   <div class="col">
                     <label for="name_user"> Prénom</label>
@@ -133,7 +142,7 @@ if (isset($id)) {
                 <div class="row rowLabel">
                   <div class="col">
                     <p>Objectif carrière</p>
-                    <textarea id="areaCareer" name="obj_career_user" rows="7" class="form-control"> <?php if (isset($_SESSION['obj_career_user'])) {
+                    <textarea id="areaCareer" name="obj_career_user" rows="5" class="form-control"> <?php if (isset($_SESSION['obj_career_user'])) {
                                                                                                       echo $_SESSION['obj_career_user'];
                                                                                                     } ?></textarea>
                   </div>
@@ -337,7 +346,7 @@ if (isset($id)) {
 
             <div class="tab-pane fade" id="realisation" role="tabpanel" aria-labelledby="realisation-tab">
 
-              <form action="#" method="post" id="form-rea">
+              <form action="#" method="post" id="form_rea">
               <div class="row rowLabel">
                   <div class="col-12">
                     Vos réalisations :
@@ -363,21 +372,21 @@ if (isset($id)) {
                 <div class="row rowLabel">
                   <div class="col-6">
                     <label for="title rea">Réalisation</label>
-                    <input type="text" class="form-control" name="title_rea" id="title_rea">
+                    <input type="text" class="form-control empty" name="title_rea" id="title_rea">
                   </div>
                   <div class="col-3">
                     <label for="start_date_rea"> Date de début</label>
-                    <input type="date" class="form-control" name="start_date_rea" id="start_date_rea">
+                    <input type="date" class="form-control empty" name="start_date_rea" id="start_date_rea">
                   </div>
                   <div class="col-3">
                     <label for="end_date_rea"> Date de fin </label>
-                    <input type="date" class="form-control" name="end_date_rea" id="end_date_rea">
+                    <input type="date" class="form-control empty" name="end_date_rea" id="end_date_rea">
                   </div>
                 </div>
                 <div class="row rowLabel">
                   <div class="col-12">
                     <p>Description</p>
-                    <textarea id="desc_rea" name="desc_rea" rows="5" id="desc_rea"></textarea>
+                    <textarea id="desc_rea" name="desc_rea" rows="5" id="desc_rea" class="form-control empty"></textarea>
                   </div>
                 </div>
                 <hr>
@@ -389,24 +398,48 @@ if (isset($id)) {
             </div>
 
             <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+                      
+            <div class="row rowLabel">
+                  <div class="col-12">
+                    Vos activité/loisirs :
 
-              <div class="row rowLabel">
-                <div class="col-12">
-                  <label for="title_act">Activité/Loisir</label>
-                  <input type="text" class="form-control" name="title_act">
+                    <select id="select_act" class="form-control">
+                      <?php
+
+                      include 'connect_db.php';
+
+                      $reponse = $bdd->query("SELECT id_act, title_act FROM activities WHERE users_id_users = $id");
+                      while ($donnees = $reponse->fetch()) {
+                        echo '<option>' . $donnees['title_act'] . '</option>';
+                      }
+
+                      ?>
+                    </select>
+                    <div>
+                      <span class="btn btn-primary mt-1" id="modifyActivity">Modifier</span>
+                      <span class="btn btn-danger mt-1" id="deleteActivity">Supprimer</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row rowLabel">
-                <div class="col-12">
-                  <p>Description</p>
-                  <textarea id="desc_act" name="desc_act" rows="5"></textarea>
+              <form action="#" method="post" id="form_act">
+                <div class="row rowLabel">
+                  <div class="col-12">
+                    <label for="title_act">Activité/Loisir</label>
+                    <input type="text" class="form-control empty" name="title_act" id="title_act">
+                  </div>
                 </div>
-              </div>
-              <hr>
-
-              <div id="here5"></div>
-              <button id="add5" class="btn btn-primary">Ajouter activité</button>
-
+                <div class="row rowLabel">
+                  <div class="col-12">
+                    <p>Description</p>
+                    <textarea id="desc_act" name="desc_act" rows="5" class="form-control empty"></textarea>
+                  </div>
+                </div>
+                <hr>
+                
+                <span class="btn btn-success" id="btn-add-act"> AJOUTER </span>
+                <span class="btn btn-primary" id="btn-modify-act"> MODIFIER</span>
+                
+              </f>
             </div>
           </div>
         </div>

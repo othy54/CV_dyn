@@ -25,6 +25,8 @@ $req->execute(
     )
 );
 
+
+
 $_SESSION['name_user'] = $names;
 $_SESSION['lastname_user'] = $lastname;
 $_SESSION['address_user'] = $address;
