@@ -47,7 +47,7 @@ if (isset($id)) {
             <a class="dropdown-item" href="#" id="saveToPDF" >Créer PDF</a>
             <a class="dropdown-item" href="../index.php">Deconnexion</a> 
           </div>
-        </div>
+        </div> 
         <div style="margin-right : 40px;">
           <?php echo $_SESSION['mail_user'].' '; ?>
         </div>
