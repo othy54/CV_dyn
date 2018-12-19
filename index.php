@@ -23,7 +23,7 @@ session_start();
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 </head>
 
@@ -35,11 +35,11 @@ session_start();
 
     <!-- CONNEXION  -->
 
-    <div class="mainContainer">
+    <div class="mainContainer" style="display:flex; align-items:center; height:100vh;">
         <div class="container">
             <div class="row" id="connexion">
                 <div class="col-10 col-md-6" id="squareConnexion">
-                    <form action="co_sgn_ctrl.php" method="post">
+                    <form action="Controllers/co_sgn_ctrl.php" method="post">
                         <h1 class="titre">MyResume</h1>
 
                         <div class="form-group">
@@ -67,7 +67,7 @@ session_start();
                                 
                         </div>
                         <div>
-                            <p><a href="#">Mot de passe oublié ?</a></p>
+                            <p><a href="https://trypap.com/" id="fPass">Mot de passe oublié ?</a></p>
                             
                            
                         </div>
@@ -97,6 +97,8 @@ session_start();
         function mySignup() {
             $("#secret").attr("value", "registerGo");
         }
+
+        
     
     </script>
 

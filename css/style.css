@@ -1,0 +1,74 @@
+body {
+    background-image: url("../Resources/img/bg.jpg");
+    background-attachment: fixed;
+
+}
+
+.titre {
+    font-family: 'Comfortaa', sans-serif;
+    padding-bottom: 10px;
+}
+
+#nav-border{
+    -webkit-box-shadow: 0px 6px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 6px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 6px 26px 0px rgba(0,0,0,0.75);
+    background-color: white;
+    height: 40px;
+}
+
+#connexion {
+    display: flex;
+    justify-content: center;
+}
+
+.form-group {
+    padding-bottom: 20px;
+}
+
+
+
+#connex-signup {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+    #connex-signup{
+        flex-direction : column;
+
+    }
+    #btnConnexion {
+        margin-bottom: 10px;
+    }
+}
+
+#squareConnexion {
+    background-color: white;
+    padding: 40px 20px;
+    box-shadow: 0 0 1px 20px rgba(0, 0, 0, 0.10);
+}
+
+#backCreate{
+    background-color: white;
+    box-shadow: 0 0 1px 20px rgba(0, 0, 0, 0.10);
+    height: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnCreate {
+    width: 50%;
+    margin: 10px;
+}
+
+#squareCreate {
+    display: flex;
+    justify-content: center;
+}
+
+
+
