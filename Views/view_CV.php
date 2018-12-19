@@ -45,9 +45,15 @@ if (isset($id)) {
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
             <a class="dropdown-item" href="create_modif_CV.php">Accueil</a>
             <a class="dropdown-item" href="#" id="saveToPDF" >Créer PDF</a>
+<<<<<<< HEAD
             <a class="dropdown-item" href="../index.php">Deconnexion</a> 
           </div>
         </div> 
+=======
+            <a class="dropdown-item" href="index.php">Deconnexion</a>
+          </div>
+        </div>
+>>>>>>> 712f161a1627374ac522a641001bf270c9e14a4c
         <div style="margin-right : 40px;">
           <?php echo $_SESSION['mail_user'].' '; ?>
         </div>
