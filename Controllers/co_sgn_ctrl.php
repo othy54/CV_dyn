@@ -41,7 +41,7 @@ if (isset($SECRET) && $SECRET == "registerGo") {
             $_SESSION['co_re_user'] = $resultat['co_re_user'];
             
 
-            header('Location: Views/create_modif_CV.php');
+            header('Location: ../Views/create_modif_CV.php');
 
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
